@@ -1,10 +1,15 @@
-import { useState } from 'react'
-
+import Header from './components/header/Header'
+import Home from './components/header/home/Home'
+import { Routes, Route } from 'react-router'
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
+    <Header />
+    <Routes>
+       <Route path='/' element={<Home />}/> 
+    </Routes>
+        
     </>
   )
 }
