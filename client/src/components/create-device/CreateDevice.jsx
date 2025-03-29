@@ -29,6 +29,22 @@ export default function CreateDevice() {
             //   onChange={handleChange}
             //   required
             ></textarea>
+            <textarea
+              name="price"
+              placeholder="Price $"
+              rows="1"
+            //   value={formData.description}
+            //   onChange={handleChange}
+            //   required
+            ></textarea>
+             <textarea
+              name="imageUrl"
+              placeholder="Image"
+              rows="1"
+            //   value={formData.description}
+            //   onChange={handleChange}
+            //   required
+            ></textarea>
             <button type="submit">Create Device</button>
           </form>
         </div>
