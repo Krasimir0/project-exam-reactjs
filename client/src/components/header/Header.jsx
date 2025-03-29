@@ -1,5 +1,3 @@
-import { Helmet, HelmetProvider } from "react-helmet-async";
-
 
 export default function Header() {
   return (
@@ -25,22 +23,17 @@ export default function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <a className="nav-link" href="/home">
+                <a className="nav-link" href="/">
                   HOME
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/about">
-                  ABOUT
+                <a className="nav-link" href="/devices">
+                  OUR DEVICES
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/games">
-                  OUR PRODUCTS
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/games/create">
+                <a className="nav-link" href="/devices/create">
                   CREATE
                 </a>
               </li>
