@@ -81,7 +81,24 @@ h1 {
 }
 
 h2 {
-     font-size: 22px
+    font-size: 32px; /* Larger and more eye-catching */
+    font-weight: 700; /* Bold for emphasis */
+    text-transform: uppercase; /* Makes it stand out */
+    color: #333; /* Dark gray for better contrast */
+    text-align: center; /* Keeps it centered */
+    margin-bottom: 50px; /* Maintains spacing */
+    letter-spacing: 1.5px; /* Adds a premium feel */
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #007bff; /* Adds a highlight effect */
+    margin: 10px auto 0;
+    border-radius: 2px;
 }
 
 h3 {
@@ -616,7 +633,6 @@ button {
     background-color: #f2f7fd;
     height: auto;
     padding-bottom: 90px;
-    margin-top: 90px;
 }
 
 .image_6{
@@ -822,3 +838,55 @@ button {
     margin-top: 0px; 
 }
 
+.create-device-form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .create-device-form h2 {
+    color: #0056b3;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .create-device-form input,
+  .create-device-form select,
+  .create-device-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #0056b3;
+    border-radius: 8px;
+    font-size: 18px;
+    background: #f0f8ff; /* Light blue */
+  }
+  
+  .create-device-form textarea {
+    resize: none;
+  }
+  
+  .create-device-form button {
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    background: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .create-device-form button:hover {
+    background: #003d80;
+  }
+  
+  body {
+    background: linear-gradient(to right, #dfe9f3, #ffffff); /* Soft Blue Gradient */
+  }
+  
