@@ -1,6 +1,29 @@
+import { useNavigate } from "react-router";
+import { useRegister } from "../../api/authApi";
+import { useUserContext } from "../../contexts/UserContext";
 import Footer from "../footer/Footer";
 
 export default function Register() {
+  const { register } = useRegister()
+  const { userLoginHandler } = useUserContext();
+  const navigate  = useNavigate()
+
+  const registerHandler = async (formData) => {
+    const { email, password } = Object.fromEntries(formData);
+    const confirmPassword =  formData.get('confirmPassword')
+
+    if (password !== confirmPassword) {
+        throw new Error('Password mismatch')
+    }
+
+    const authData = await register(email, password);
+    
+    userLoginHandler(authData)
+
+    navigate("/");
+    
+};
+
   return (
     <>
       <div className="contact_section layout_padding">
@@ -14,21 +37,13 @@ export default function Register() {
               <div className="email_box">
                 <div className="input_main">
                   <div className="container">
-                    <form action="/action_page.php">
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          className="email-bt"
-                          placeholder="Name"
-                          name="Name"
-                        />
-                      </div>
+                    <form action={registerHandler}>
                       <div className="form-group">
                         <input
                           type="text"
                           className="email-bt"
                           placeholder="Email"
-                          name="Name"
+                          name="email"
                         />
                       </div>
                       <div className="form-group">
@@ -36,13 +51,23 @@ export default function Register() {
                           type="text"
                           className="email-bt"
                           placeholder="Password"
-                          name="Email"
+                          name="password"
                         />
                       </div>
+                      <div className="form-group">
+                        <input
+                          type="text"
+                          className="email-bt"
+                          placeholder="Confirm Password"
+                          name="confirmPassword"
+                        />
+                      </div>
+                        <input
+                           className="main_bt"
+                          type="submit"
+                          value="Register"
+                        />
                     </form>
-                  </div>
-                  <div className="main_bt">
-                    <a href="#">REGISTER</a>
                   </div>
                 </div>
               </div>
