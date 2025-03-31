@@ -1,4 +1,10 @@
+import { Link } from "react-router";
+import useAuth from "../../hooks/useAuth";
+
 export default function Header() {
+  const { email } = useAuth();
+  
+
   return (
     <>
       <div className="header_section">
@@ -20,32 +26,46 @@ export default function Header() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav ml-auto">  {/* Use ml-auto for right alignment */}
+            <ul className="navbar-nav ml-auto">
+              {/* Use ml-auto for right alignment */}
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <Link className="nav-link" to="/">
                   HOME
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/devices">
+                <Link className="nav-link" to="/devices">
                   OUR DEVICES
-                </a>
+                </Link>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/devices/create">
-                  CREATE
-                </a>
-              </li>
-              <li className="nav-item active">
-                <a className="nav-link" href="/login">
-                  LOGIN
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/register">
-                  REGISTER
-                </a>
-              </li>
+              {email ? (
+                <>
+                  <li className="nav-item">                 
+                    <Link className="nav-link" to="/devices/create">
+                      CREATE
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/logout">
+                      LOGOUT
+                    </Link>
+                  </li>
+                  {email}
+                </>
+              ) : (
+                <>
+                  <li className="nav-item active">
+                    <Link className="nav-link" to="/login">
+                      LOGIN
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/register">
+                      REGISTER
+                    </Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </nav>
