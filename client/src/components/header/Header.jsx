@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { FaUserCircle } from "react-icons/fa";
 import useAuth from "../../hooks/useAuth";
 
 export default function Header() {
@@ -11,7 +12,7 @@ export default function Header() {
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="logo">
             <a href="index.html">
-              <img src="images/logo.png" />
+              <img src="/images/logo.png" />
             </a>
           </div>
           <button
@@ -50,7 +51,12 @@ export default function Header() {
                       LOGOUT
                     </Link>
                   </li>
-                  {email}
+                  <li className="nav-item">
+                    <span className="nav-link user-email">
+                      <FaUserCircle style={{ marginRight: "8px" }} />
+                      {email}
+                    </span>
+                  </li>
                 </>
               ) : (
                 <>
