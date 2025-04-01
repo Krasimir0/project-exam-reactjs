@@ -10,6 +10,8 @@ import Logout from './components/logout/Logout'
 import AuthGuard from './components/guards/AuthGuard'
 import GuestGuard from './components/guards/GuestGuard'
 import UserProvider from './providers/UserProvider'
+import DeviceDetails from './components/device-details/DeviceDetails'
+import DeviceEdit from './components/device-edit/DeviceEdit'
 
 function App() {
 
@@ -20,8 +22,10 @@ function App() {
     <Routes>
        <Route path='/' element={<Home />}/> 
        <Route path='/devices' element={<Catalog />} />
+       <Route path='/details/:deviceId' element={<DeviceDetails />} />
        <Route element={<AuthGuard />}>
         <Route path='/devices/create' element={<CreateDevice />} />
+        <Route path='/details/:deviceId/edit' element={<DeviceEdit />}/>
         <Route path='/logout' element={<Logout />} />
        </Route>
        <Route element={<GuestGuard />}>

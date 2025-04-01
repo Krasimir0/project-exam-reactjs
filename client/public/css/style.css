@@ -711,7 +711,7 @@ button {
     font-size: 16px;
     color: #ffffff;
     margin-left: 0px;
-    margin-top: 0px;
+    margin-top: -37px;
 }
 
 .section_footer {
@@ -889,6 +889,192 @@ button {
   .create-device-form button:hover {
     background: #003d80;
   }
+  
+
+  .details-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically if needed */
+    width: 100%; /* Makes sure it stretches within the card */
+    margin-top: 10px; /* Adds spacing */
+  }
+  
+
+  .details-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #5ca0e9, #007bff);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .details-button:hover {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .details-button:active {
+    transform: translateY(1px);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Custom styles for the DeviceDetails page */
+
+/* Device Details Section */
+/* Add these styles to your style.css file */
+
+/* Device Details Section - Enhanced Styles */
+.device-details-section {
+    background-color: #f5f5f5;
+    padding: 40px 0; /* Increased padding */
+    min-height: 80vh; /* Minimum height to fill most of the viewport */
+}
+
+.device-details-card {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 40px; /* Increased padding */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+    border-radius: 15px; /* Larger border radius */
+    max-width: 1200px; /* Increased max width */
+    margin: 0 auto; /* Center the card */
+}
+
+.device-details-image {
+    max-width: 50%; /* Larger image area */
+    border-radius: 15px; /* Larger border radius */
+    object-fit: cover; /* Ensure image fills space */
+    height: 500px; /* Fixed height for consistency */
+}
+
+.device-details-content {
+    flex-grow: 1;
+    margin-left: 40px; /* Increased margin */
+    padding: 20px; /* Added padding */
+}
+
+.device-details-title {
+    font-size: 42px; /* Larger title */
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px; /* More spacing */
+}
+
+.device-details-description {
+    font-size: 20px; /* Larger text */
+    color: #666;
+    margin-top: 25px;
+    line-height: 1.6; /* Better readability */
+}
+
+.device-details-price {
+    font-size: 32px; /* Larger price */
+    font-weight: 600;
+    color: #007bff;
+    margin-top: 30px;
+}
+
+.device-details-price span {
+    font-size: 36px; /* Larger span */
+    color: #333;
+}
+
+/* Button Container - Enhanced */
+.button-container {
+    display: flex;
+    gap: 20px; /* More space between buttons */
+    margin-top: 40px; /* More spacing */
+    justify-content: center; /* Center buttons */
+}
+
+/* Button Styles - Enhanced */
+.device-back-button,
+.device-edit-button,
+.device-delete-button {
+    padding: 15px 30px; /* Larger buttons */
+    font-size: 18px; /* Larger text */
+    border-radius: 8px; /* Slightly rounded */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 150px; /* Consistent width */
+}
+
+.device-back-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.device-back-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Slight lift */
+}
+
+.device-edit-button {
+    background-color: #ffc107;
+    color: black;
+    text-decoration: none; /* For the Link component */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.device-edit-button:hover {
+    background-color: #e0a800;
+    transform: translateY(-2px);
+}
+
+.device-delete-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.device-delete-button:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .device-details-card {
+        flex-direction: column;
+    }
+    
+    .device-details-image {
+        max-width: 100%;
+        height: 400px;
+        margin-bottom: 30px;
+    }
+    
+    .device-details-content {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .device-details-title {
+        font-size: 36px;
+    }
+    
+    .device-details-description {
+        font-size: 18px;
+    }
+    
+    .button-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
   
   body {
     background: linear-gradient(to right, #dfe9f3, #ffffff); /* Soft Blue Gradient */
