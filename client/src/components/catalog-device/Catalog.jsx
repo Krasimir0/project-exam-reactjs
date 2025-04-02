@@ -42,7 +42,7 @@ export default function Catalog() {
             </p>
           )}
       <div className="see_main">
-        <div className="see_bt"><a href="#">See More</a></div>
+        <div className="see_bt"><Link to={'/'}>See More</Link></div>
       </div>
     </div>
   </div>

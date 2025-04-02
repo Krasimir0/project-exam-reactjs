@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router' 
 import { useCreateGame } from '../../api/deviceApi';
+import { toast } from 'react-toastify';
 
 export default function CreateDevice() {
       const navigate = useNavigate();
@@ -7,10 +8,14 @@ export default function CreateDevice() {
 
       const submitAction = async (formData) => {
           const deviceData = Object.fromEntries(formData);
-          
-          await create(deviceData);
+          try {
+            await create(deviceData);
 
-          navigate('/devices')          
+            toast.success("Successfully created device")
+            navigate('/devices')   
+          } catch (err) {
+            toast.error(err.message)
+          }
       }
     
       return (

@@ -3,6 +3,7 @@ import Footer from "../footer/Footer";
 import { useNavigate } from "react-router";
 import { useUserContext } from "../../contexts/UserContext";
 import { useLogin } from "../../api/authApi";
+import { toast } from "react-toastify";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -11,12 +12,16 @@ export default function Login() {
 
   const loginHandler = async (_, formData) => {
     const {email, password} = Object.fromEntries(formData);
-    
-    const authData = await login(email, password);
-    userLoginHandler(authData);
-    
-    navigate("/");
-  };
+    try {
+      const authData = await login(email, password);
+      userLoginHandler(authData);
+      
+      toast.success("Successful login")
+      navigate("/");
+    } catch (err) {
+        toast.error(err)
+    }
+};
 
   const [_, loginAction, isPending] = useActionState(loginHandler, {
     email: "",

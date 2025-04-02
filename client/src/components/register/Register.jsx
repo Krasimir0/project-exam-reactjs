@@ -2,6 +2,7 @@ import { useNavigate } from "react-router";
 import { useRegister } from "../../api/authApi";
 import { useUserContext } from "../../contexts/UserContext";
 import Footer from "../footer/Footer";
+import { toast } from "react-toastify"
 
 export default function Register() {
   const { register } = useRegister()
@@ -13,15 +14,18 @@ export default function Register() {
     const confirmPassword =  formData.get('confirmPassword')
 
     if (password !== confirmPassword) {
-        throw new Error('Password mismatch')
+          toast.error('Password mismatch')
     }
-
-    const authData = await register(email, password);
     
-    userLoginHandler(authData)
+    try {
+      const authData = await register(email, password);    
+      userLoginHandler(authData)
 
-    navigate("/");
-    
+      toast.success("Successful register");
+      navigate("/");   
+    } catch (err) {
+      toast.error(err.message);
+    }    
 };
 
   return (

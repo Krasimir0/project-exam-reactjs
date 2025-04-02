@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from "react-router"
 import { useDevice, useEditDevice } from "../../api/deviceApi";
+import { toast } from "react-toastify";
 
 export default function DeviceEdit() {
     const navigate = useNavigate();
@@ -9,10 +10,15 @@ export default function DeviceEdit() {
 
     const submitHandler = async (formData) => {
         const deviceData = Object.fromEntries(formData);
+        try {
+          await edit(deviceId, deviceData);
 
-        await edit(deviceId, deviceData);
-
-        navigate(`/details/${deviceId}`)
+          toast.success("Successfully edited device")
+          navigate(`/details/${deviceId}`)  
+        } catch (err) {
+          toast.error(err.message)
+        }
+        
     }
 
     return (

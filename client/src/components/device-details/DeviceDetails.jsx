@@ -1,6 +1,7 @@
 import { Link, useNavigate, useParams } from "react-router";
 import { useDeleteDevice, useDevice } from "../../api/deviceApi";
 import useAuth from "../../hooks/useAuth";
+import { toast } from "react-toastify";
 
 export default function DeviceDetails() {
     const navigate = useNavigate(); 
@@ -17,9 +18,15 @@ export default function DeviceDetails() {
             return;
         }
 
-        await deleteDevice(deviceId);
-
-        navigate('/devices')
+        try {
+            await deleteDevice(deviceId);
+            
+            toast.success("Successfully deleted device")
+            navigate('/devices')    
+        } catch (err) {
+            toast.error(err.message)
+        }
+        
     }
 
     const isOwner = userId === device._ownerId;
