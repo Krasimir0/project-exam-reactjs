@@ -52,7 +52,7 @@ export default function Register() {
                       </div>
                       <div className="form-group">
                         <input
-                          type="text"
+                          type="password"
                           className="email-bt"
                           placeholder="Password"
                           name="password"
@@ -60,7 +60,7 @@ export default function Register() {
                       </div>
                       <div className="form-group">
                         <input
-                          type="text"
+                          type="password"
                           className="email-bt"
                           placeholder="Confirm Password"
                           name="confirmPassword"
