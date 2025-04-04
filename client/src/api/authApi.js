@@ -3,7 +3,7 @@ import { UserContext } from "../contexts/UserContext"
 import request from "../utils/request"
 
 
-const baseUrl = "http://localhost:3030/users"
+const baseUrl = `${import.meta.env.VITE_APP_SERVER_URL}/users`
 
 
 export const useLogin = () => {
