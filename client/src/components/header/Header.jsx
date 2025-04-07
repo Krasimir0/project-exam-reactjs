@@ -11,9 +11,9 @@ export default function Header() {
       <div className="header_section">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="logo">
-            <a href="index.html">
+            <Link to="/">
               <img src="/images/logo.png" />
-            </a>
+            </Link>
           </div>
           <button
             className="navbar-toggler"
