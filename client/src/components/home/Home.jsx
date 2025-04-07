@@ -61,7 +61,7 @@ export default function Home() {
       <div className="product_section layout_padding">
         <div className="container">
           <div className="product_text">
-            Our <span style={{ color: "#5ca0e9" }}>Our Latest Products</span>
+             <span style={{ color: "#5ca0e9" }}>Our Latest Products</span>
           </div>
           <p className="long_text">
           Browse through our collection of high-tech gaming devices, from controllers to VR gear. Designed for gamers, by gamers.
